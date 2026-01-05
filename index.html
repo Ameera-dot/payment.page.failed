@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Issue - Refund Failed</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .header {
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            color: white;
+            padding: 30px 30px 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header i {
+            font-size: 70px;
+            margin-bottom: 15px;
+            display: block;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        .content {
+            padding: 40px 40px 30px;
+            text-align: center;
+        }
+        
+        .message-box {
+            background: #fff5f5;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 35px;
+            border-left: 6px solid #ff416c;
+            box-shadow: 0 8px 20px rgba(255, 65, 108, 0.1);
+        }
+        
+        .message-box h2 {
+            color: #ff416c;
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .message-box p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 5px;
+        }
+        
+        .message-box .highlight {
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .card-icon {
+            display: inline-block;
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 12px;
+            margin: 15px 8px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .card-icon i {
+            color: #555;
+            font-size: 24px;
+        }
+        
+        .button-container {
+            margin-top: 20px;
+        }
+        
+        .action-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to right, #4776E6, #8E54E9);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(71, 118, 230, 0.4);
+            letter-spacing: 0.5px;
+            width: 100%;
+            max-width: 320px;
+            margin-top: 10px;
+        }
+        
+        .action-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(71, 118, 230, 0.5);
+            background: linear-gradient(to right, #3a63d8, #7d48d6);
+        }
+        
+        .action-button:active {
+            transform: translateY(-2px);
+        }
+        
+        .action-button i {
+            margin-right: 12px;
+            font-size: 22px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px 40px 30px;
+            color: #888;
+            font-size: 14px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                border-radius: 20px;
+            }
+            
+            .header {
+                padding: 25px 20px 15px;
+            }
+            
+            .header i {
+                font-size: 60px;
+            }
+            
+            .header h1 {
+                font-size: 26px;
+            }
+            
+            .content {
+                padding: 30px 25px 20px;
+            }
+            
+            .message-box {
+                padding: 20px;
+            }
+            
+            .message-box h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <i class="fas fa-exclamation-triangle pulse"></i>
+            <h1>Payment Issue</h1>
+        </div>
+        
+        <div class="content">
+            <div class="message-box">
+                <h2>Refund Failed</h2>
+                <p>We were unable to process the refund to your card.</p>
+                <p class="highlight">Please use another payment method.</p>
+                
+                <div class="card-icons">
+                    <div class="card-icon">
+                        <i class="fab fa-cc-visa"></i>
+                    </div>
+                    <div class="card-icon">
+                        <i class="fab fa-cc-mastercard"></i>
+                    </div>
+                    <div class="card-icon">
+                        <i class="fab fa-cc-amex"></i>
+                    </div>
+                    <div class="card-icon">
+                        <i class="fab fa-cc-discover"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="button-container">
+                <button class="action-button" id="tryAgainBtn">
+                    <i class="fas fa-credit-card"></i>
+                    Use Another Card
+                </button>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Please try again with a different payment method.</p>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('tryAgainBtn').addEventListener('click', function() {
+            // Animation on click
+            this.style.transform = 'scale(0.95)';
+            
+            // Show loading state
+            const originalText = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Redirecting...';
+            this.disabled = true;
+            
+            // Simulate brief processing delay for better UX
+            setTimeout(() => {
+                // Redirect to bincheck.io
+                window.location.href = "https://bincheck.io/";
+            }, 800);
+        });
+    </script>
+</body>
+</html>
